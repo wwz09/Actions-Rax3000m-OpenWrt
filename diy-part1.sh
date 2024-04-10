@@ -11,11 +11,9 @@
 #
 
 #屏蔽原有源
-sed -i 's/^[^#]\(.*https:\/\/github\.com\/immortalwrt\/packages.*\)/#\1/' feeds.conf.default
-sed -i 's/^[^#]\(.*https:\/\/github\.com\/immortalwrt\/luci.*\)/#\1/' feeds.conf.default
+#sed -i 's/^[^#]\(.*https:\/\/github\.com\/immortalwrt\/packages.*\)/#\1/' feeds.conf.default
+#sed -i 's/^[^#]\(.*https:\/\/github\.com\/immortalwrt\/luci.*\)/#\1/' feeds.conf.default
 
 #添加新软件源
-echo "src-git packages https://github.com/coolsnowwolf/packages" >> "feeds.conf.default"
-echo "src-git luci https://github.com/coolsnowwolf/luci" >> "feeds.conf.default"
 echo "src-git PSW https://github.com/sbwml/openwrt_helloworld.git;v5" >> "feeds.conf.default"
 echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
