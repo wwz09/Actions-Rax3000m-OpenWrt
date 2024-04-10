@@ -24,3 +24,23 @@ rm -rf feeds/packages/net/brook
 git clone -b main https://github.com/xiaorouji/openwrt-passwall-packages.git
 cp -r openwrt-passwall-packages/brook feeds/packages/net
 rm -rf openwrt-passwall-packages
+
+# 克隆 coolsnowwolf 的 luci 和 packages 仓库
+git clone https://github.com/coolsnowwolf/luci.git coolsnowwolf-luci
+git clone https://github.com/coolsnowwolf/packages.git coolsnowwolf-packages
+
+# 替换luci-app-zerotier和luci-app-frpc
+rm -rf feeds/luci/applications/{luci-app-zerotier,luci-app-frpc}
+cp -r coolsnowwolf-luci/applications/{luci-app-zerotier,luci-app-frpc} feeds/luci/applications
+
+# 替换zerotier、frp 和kcptun
+rm -rf feeds/packages/net/{zerotier,frp,kcptun}
+cp -r coolsnowwolf-packages/net/{zerotier,frp,kcptun} feeds/packages/net
+
+# 修改frp版本为官网最新v0.57.0 https://github.com/fatedier/frp
+sed -i 's/PKG_VERSION:=0.53.2/PKG_VERSION:=0.57.0/' feeds/packages/net/frp/Makefile
+sed -i 's/PKG_HASH:=ff2a4f04e7732bc77730304e48f97fdd062be2b142ae34c518ab9b9d7a3b32ec/PKG_HASH:=460e3ea0aa18c63f21fd5e31663743dedaed2b2f75772050a7627e8534b5f47d/' feeds/packages/net/frp/Makefile
+
+# 删除克隆的 coolsnowwolf-luci 和 coolsnowwolf-packages 仓库
+rm -rf coolsnowwolf-luci
+rm -rf coolsnowwolf-packages
