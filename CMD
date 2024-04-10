@@ -1,0 +1,18 @@
+git clone -b openwrt-21.02 --single-branch https://github.com/hanwckf/immortalwrt-mt798x openwrt
+cd openwrt
+
+sed -i 's/^[^#]\(.*https:\/\/github\.com\/immortalwrt\/packages.*\)/#\1/' feeds.conf.default
+sed -i 's/^[^#]\(.*https:\/\/github\.com\/immortalwrt\/luci.*\)/#\1/' feeds.conf.default
+
+echo "src-git packages https://github.com/coolsnowwolf/packages" >> "feeds.conf.default"
+echo "src-git luci https://github.com/coolsnowwolf/luci" >> "feeds.conf.default"
+echo "src-git PSW https://github.com/sbwml/openwrt_helloworld.git;v5" >> "feeds.conf.default"
+echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
+
+./scripts/feeds update -a
+./scripts/feeds install -a
+
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+
+make menuconfig
