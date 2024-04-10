@@ -44,3 +44,7 @@ sed -i 's/PKG_HASH:=ff2a4f04e7732bc77730304e48f97fdd062be2b142ae34c518ab9b9d7a3b
 # 删除克隆的 coolsnowwolf-luci 和 coolsnowwolf-packages 仓库
 rm -rf coolsnowwolf-luci
 rm -rf coolsnowwolf-packages
+
+git clone https://github.com/coolsnowwolf/lede.git coolsnowwolf-lede
+cp -r coolsnowwolf-lede/package/lean package/
+rm -rf coolsnowwolf-lede
