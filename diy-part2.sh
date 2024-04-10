@@ -11,8 +11,8 @@
 #
 
 # 移除 openwrt feeds 自带的核心包
-#rm -rf feeds/packages/net/{xray-core,xray-plugin,v2ray-core,v2ray-plugin,v2ray-geodata,sing-box,hysteria,naiveproxy,shadowsocks-rust,tuic-client,microsocks,chinadns-ng,dns2socks,dns2tcp,ipt2socks}
-#rm -rf feeds/luci/applications/{luci-app-passwall,luci-app-ssr-plus}
+rm -rf feeds/packages/net/{xray-core,xray-plugin,v2ray-core,v2ray-plugin,v2ray-geodata,sing-box,hysteria,naiveproxy,shadowsocks-rust,tuic-client,microsocks,chinadns-ng,dns2socks,dns2tcp,ipt2socks}
+rm -rf feeds/luci/applications/{luci-app-passwall,luci-app-ssr-plus}
 #git clone https://github.com/sbwml/openwrt_helloworld package/helloworld
 
 # 更新 golang 1.22 版本
@@ -20,7 +20,7 @@ rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
 # 替换最新版brook
-#rm -rf feeds/packages/net/brook
-#git clone -b main https://github.com/xiaorouji/openwrt-passwall-packages.git
-#cp -r openwrt-passwall-packages/brook feeds/packages/net
-#rm -rf openwrt-passwall-packages
+rm -rf feeds/packages/net/brook
+git clone -b main https://github.com/xiaorouji/openwrt-passwall-packages.git
+cp -r openwrt-passwall-packages/brook feeds/packages/net
+rm -rf openwrt-passwall-packages
