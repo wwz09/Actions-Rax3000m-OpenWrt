@@ -34,8 +34,8 @@ rm -rf feeds/luci/applications/{luci-app-zerotier,luci-app-frpc}
 cp -r coolsnowwolf-luci/applications/{luci-app-zerotier,luci-app-frpc} feeds/luci/applications
 
 # 替换zerotier、frp 和kcptun
-rm -rf feeds/packages/net/{zerotier,frp,kcptun}
-cp -r coolsnowwolf-packages/net/{zerotier,frp,kcptun} feeds/packages/net
+rm -rf feeds/packages/net/{zerotier,frp,kcptun,haproxy}
+cp -r coolsnowwolf-packages/net/{zerotier,frp,kcptun,haproxy} feeds/packages/net
 
 # 修改frp版本为官网最新v0.57.0 https://github.com/fatedier/frp
 sed -i 's/PKG_VERSION:=0.53.2/PKG_VERSION:=0.57.0/' feeds/packages/net/frp/Makefile
