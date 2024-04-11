@@ -19,6 +19,9 @@ git clone https://github.com/sbwml/openwrt_helloworld package/helloworld
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
+# 添加luci-app-alist源码
+git clone https://github.com/sbwml/luci-app-alist package/alist
+
 # 替换最新版brook
 rm -rf feeds/packages/net/brook
 git clone -b main https://github.com/xiaorouji/openwrt-passwall-packages.git
