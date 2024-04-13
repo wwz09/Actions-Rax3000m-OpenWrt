@@ -11,7 +11,7 @@
 #
 
 # 移除 openwrt feeds 自带的核心包
-rm -rf feeds/packages/net/{xray-core,xray-plugin,v2ray-core,v2ray-plugin,v2ray-geodata,sing-box,hysteria,naiveproxy,shadowsocks-rust,tuic-client,microsocks,chinadns-ng,dns2socks,dns2tcp,ipt2socks}
+rm -rf feeds/packages/net/{xray-core,xray-plugin,v2ray-core,v2ray-plugin,v2ray-geodata,sing-box,hysteria,naiveproxy,shadowsocks-rust,tuic-client,microsocks,chinadns-ng,alist,dns2socks,dns2tcp,ipt2socks}
 rm -rf feeds/luci/applications/{luci-app-passwall,luci-app-ssr-plus}
 git clone https://github.com/sbwml/openwrt_helloworld package/helloworld
 
