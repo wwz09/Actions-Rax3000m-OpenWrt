@@ -35,8 +35,9 @@ git clone https://github.com/coolsnowwolf/packages.git coolsnowwolf-packages
 # 替换luci-app-zerotier和luci-app-frpc
 rm -rf feeds/luci/applications/{luci-app-zerotier,luci-app-frpc}
 cp -r coolsnowwolf-luci/applications/{luci-app-zerotier,luci-app-frpc} feeds/luci/applications
-sed -i 's|include ../../luci\.mk|include $(TOPDIR)/feeds/luci/luci.mk|' feeds/luci/applications/luci-app-frpc/Makefile
-sed -i 's|include ../../luci\.mk|include $(TOPDIR)/feeds/luci/luci.mk|' feeds/luci/applications/luci-app-zerotier/Makefile
+cp coolsnowwolf-luci/luci.mk package/
+sed -i 's|include ../../luci\.mk|include $(TOPDIR)/package/luci.mk|' feeds/luci/applications/luci-app-frpc/Makefile
+sed -i 's|include ../../luci\.mk|include $(TOPDIR)/package/luci.mk|' feeds/luci/applications/luci-app-zerotier/Makefile
 
 # 替换zerotier、frp 和kcptun
 rm -rf feeds/packages/net/{zerotier,frp,kcptun,haproxy}
