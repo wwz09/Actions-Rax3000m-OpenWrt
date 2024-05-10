@@ -43,9 +43,9 @@ sed -i 's|include ../../luci\.mk|include ../../../../package/luci.mk|' feeds/luc
 rm -rf feeds/packages/net/{zerotier,frp,kcptun,haproxy}
 cp -r coolsnowwolf-packages/net/{zerotier,frp,kcptun,haproxy} feeds/packages/net
 
-# 修改frp版本为官网最新v0.57.0 https://github.com/fatedier/frp
-sed -i 's/PKG_VERSION:=0.53.2/PKG_VERSION:=0.57.0/' feeds/packages/net/frp/Makefile
-sed -i 's/PKG_HASH:=ff2a4f04e7732bc77730304e48f97fdd062be2b142ae34c518ab9b9d7a3b32ec/PKG_HASH:=460e3ea0aa18c63f21fd5e31663743dedaed2b2f75772050a7627e8534b5f47d/' feeds/packages/net/frp/Makefile
+# 修改frp版本为官网最新v0.58.0 https://github.com/fatedier/frp
+sed -i 's/PKG_VERSION:=0.53.2/PKG_VERSION:=0.58.0/' feeds/packages/net/frp/Makefile
+sed -i 's/PKG_HASH:=ff2a4f04e7732bc77730304e48f97fdd062be2b142ae34c518ab9b9d7a3b32ec/PKG_HASH:=2428ed4d9df6f2be29d006c5fcdeb526b86a137fa007a396af9b9d28ea3cee60/' feeds/packages/net/frp/Makefile
 
 # 删除克隆的 coolsnowwolf-luci 和 coolsnowwolf-packages 仓库
 rm -rf coolsnowwolf-luci
