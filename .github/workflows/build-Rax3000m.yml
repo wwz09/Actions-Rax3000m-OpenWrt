@@ -178,7 +178,7 @@ jobs:
         rm -rf immortalwrt-mediatek-mt7981-cmcc_rax3000m-initramfs-kernel.bin
         rm -rf packages feeds.buildinfo version.buildinfo
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
-        echo "status=success" >> $GITHUB_OUTPUT
+        #echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
